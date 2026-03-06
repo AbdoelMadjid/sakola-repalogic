@@ -4,9 +4,9 @@
 @endsection
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Features
@@ -225,17 +225,14 @@
     <!--end::Container-->
 @endsection
 @section('scripts')
-<!--begin::Page Vendors(used by this page)-->
-		<script src="//www.amcharts.com/lib/3/amcharts.js"></script>
-		<script src="//www.amcharts.com/lib/3/serial.js"></script>
-		<script src="//www.amcharts.com/lib/3/radar.js"></script>
-		<script src="//www.amcharts.com/lib/3/pie.js"></script>
-		<script src="//www.amcharts.com/lib/3/plugins/tools/polarScatter/polarScatter.min.js"></script>
-		<script src="//www.amcharts.com/lib/3/plugins/animate/animate.min.js"></script>
-		<script src="//www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-		<script src="//www.amcharts.com/lib/3/themes/light.js"></script>
+    <!--begin::Page Vendors(used by this page)-->
+    <script src="//www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="//www.amcharts.com/lib/3/serial.js"></script>
+    <script src="//www.amcharts.com/lib/3/radar.js"></script>
+    <script src="//www.amcharts.com/lib/3/pie.js"></script>
+    <script src="//www.amcharts.com/lib/3/plugins/tools/polarScatter/polarScatter.min.js"></script>
+    <script src="//www.amcharts.com/lib/3/plugins/animate/animate.min.js"></script>
+    <script src="//www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="//www.amcharts.com/lib/3/themes/light.js"></script>
     <script src="{{ asset('assets/js/pages/features/charts/amcharts/charts.js') }}"></script>
 @endsection
-
-
-

@@ -1,9 +1,9 @@
 @extends('layouts.index')
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Features
@@ -487,6 +487,3 @@ Dot label style &lt;span class="label label-dot label-success"&gt;&lt;/span&gt; 
     </div>
     <!--end::Container-->
 @endsection
-
-
-

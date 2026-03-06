@@ -4,9 +4,9 @@
 @endsection
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Features
@@ -410,9 +410,6 @@
     <!--end::Container-->
 @endsection
 @section('scripts')
-    <script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script>
-    <script src="{{ asset('assets/js/pages/features/calendar/external-events.js')}}"></script>
+    <script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/features/calendar/external-events.js') }}"></script>
 @endsection
-
-
-

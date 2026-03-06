@@ -4,9 +4,9 @@
 @endsection
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Crud
@@ -761,6 +761,3 @@
     <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
     <script src="{{ asset('assets/js/pages/crud/datatables/extensions/buttons.js') }}"></script>
 @endsection
-
-
-

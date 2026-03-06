@@ -1,9 +1,9 @@
 @extends('layouts.index')
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Crud
@@ -624,6 +624,3 @@
     <script src="{{ asset('assets/js/pages/crud/forms/editors/ckeditor-balloon.js') }}"></script>
     <!--end::Page Scripts-->
 @endsection
-
-
-

@@ -1,9 +1,9 @@
 @extends('layouts.index')
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Features
@@ -363,7 +363,8 @@
                                 <input type="color" id="fa5_color_input" class="form-control p-1" value="#000000">
                             </div>
                             <div class="col-md-2 mb-3 d-flex align-items-end">
-                                <button type="button" class="btn btn-light-primary font-weight-bold w-100" id="fa5_reset_btn">Reset</button>
+                                <button type="button" class="btn btn-light-primary font-weight-bold w-100"
+                                    id="fa5_reset_btn">Reset</button>
                             </div>
                         </div>
                         <div class="border rounded p-4 mb-4 bg-light">
@@ -13858,7 +13859,8 @@
                         return '';
                     }
 
-                    return '<i class="' + selectedIconClass + '" style="font-size: ' + currentSize + 'px; color: ' + currentColor + ';"></i>';
+                    return '<i class="' + selectedIconClass + '" style="font-size: ' + currentSize + 'px; color: ' +
+                        currentColor + ';"></i>';
                 }
 
                 function updateSnippetPanel() {
@@ -13917,7 +13919,8 @@
                         var badge = document.createElement('span');
                         badge.className = 'fa5-copied-badge';
                         badge.textContent = 'Copied';
-                        badge.style.cssText = 'position:absolute;top:6px;right:6px;background:#1BC5BD;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;line-height:1.4;';
+                        badge.style.cssText =
+                            'position:absolute;top:6px;right:6px;background:#1BC5BD;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;line-height:1.4;';
                         card.appendChild(badge);
                         break;
                     }
@@ -13928,7 +13931,8 @@
                     if (!toast) {
                         toast = document.createElement('div');
                         toast.id = 'fa5_copy_toast';
-                        toast.style.cssText = 'position:fixed;top:20px;right:20px;z-index:2000;background:#1BC5BD;color:#fff;padding:10px 14px;border-radius:6px;font-weight:600;font-size:12px;box-shadow:0 4px 12px rgba(0,0,0,.2);opacity:0;transform:translateY(-8px);transition:all .2s ease;';
+                        toast.style.cssText =
+                            'position:fixed;top:20px;right:20px;z-index:2000;background:#1BC5BD;color:#fff;padding:10px 14px;border-radius:6px;font-weight:600;font-size:12px;box-shadow:0 4px 12px rgba(0,0,0,.2);opacity:0;transform:translateY(-8px);transition:all .2s ease;';
                         document.body.appendChild(toast);
                     }
 

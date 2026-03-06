@@ -1,9 +1,9 @@
 @extends('layouts.index')
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Features
@@ -330,7 +330,8 @@
                             <h3 class="card-label">Custom Icons</h3>
                         </div>
                         <div class="card-toolbar">
-                            <span class="text-muted font-size-sm" id="custom_count_text">Klik icon untuk copy snippet</span>
+                            <span class="text-muted font-size-sm" id="custom_count_text">Klik icon untuk copy
+                                snippet</span>
                         </div>
                     </div>
                     <div class="card-body" id="kt_custom_icons_collection">
@@ -925,10 +926,17 @@
                 toolbar.className = 'mb-8';
                 toolbar.innerHTML =
                     '<div class="row align-items-end">' +
-                    '<div class="col-md-5 mb-4 mb-md-0"><label class="font-weight-bold mb-2 d-block">Pencarian Icon</label><input type="text" id="' + options.prefix + '_search_input" class="form-control" placeholder="' + options.searchPlaceholder + '" autocomplete="off"></div>' +
-                    '<div class="col-md-3 col-sm-6 mb-4 mb-md-0"><label class="font-weight-bold mb-2 d-block">Ukuran Icon</label><select id="' + options.prefix + '_size_input" class="form-control"><option value="12">12</option><option value="16">16</option><option value="20">20</option><option value="24" selected>24</option><option value="28">28</option><option value="32">32</option><option value="40">40</option><option value="48">48</option><option value="56">56</option><option value="64">64</option></select></div>' +
-                    '<div class="col-md-2 col-sm-6 mb-4 mb-md-0"><label class="font-weight-bold mb-2 d-block">Warna Icon</label><input type="color" id="' + options.prefix + '_color_input" class="form-control p-1" value="#000000" style="height:38px;"></div>' +
-                    '<div class="col-md-2 d-flex justify-content-md-end"><button type="button" id="' + options.prefix + '_reset_btn" class="btn btn-light-dark w-100">Reset</button></div>' +
+                    '<div class="col-md-5 mb-4 mb-md-0"><label class="font-weight-bold mb-2 d-block">Pencarian Icon</label><input type="text" id="' +
+                    options.prefix + '_search_input" class="form-control" placeholder="' + options.searchPlaceholder +
+                    '" autocomplete="off"></div>' +
+                    '<div class="col-md-3 col-sm-6 mb-4 mb-md-0"><label class="font-weight-bold mb-2 d-block">Ukuran Icon</label><select id="' +
+                    options.prefix +
+                    '_size_input" class="form-control"><option value="12">12</option><option value="16">16</option><option value="20">20</option><option value="24" selected>24</option><option value="28">28</option><option value="32">32</option><option value="40">40</option><option value="48">48</option><option value="56">56</option><option value="64">64</option></select></div>' +
+                    '<div class="col-md-2 col-sm-6 mb-4 mb-md-0"><label class="font-weight-bold mb-2 d-block">Warna Icon</label><input type="color" id="' +
+                    options.prefix +
+                    '_color_input" class="form-control p-1" value="#000000" style="height:38px;"></div>' +
+                    '<div class="col-md-2 d-flex justify-content-md-end"><button type="button" id="' + options.prefix +
+                    '_reset_btn" class="btn btn-light-dark w-100">Reset</button></div>' +
                     '</div>';
 
                 var snippetPanel = document.createElement('div');
@@ -936,9 +944,20 @@
                 snippetPanel.style.background = '#F4F6FA';
                 snippetPanel.innerHTML =
                     '<div class="row align-items-start">' +
-                    '<div class="col-lg-3 mb-4 mb-lg-0"><label class="font-weight-bold mb-2 d-block">Preview</label><div class="d-flex align-items-center justify-content-center rounded" style="min-height:94px;background:#fff;border:1px dashed #d9dee7;"><i id="' + options.prefix + '_preview_icon"></i></div></div>' +
-                    '<div class="col-lg-6 mb-4 mb-lg-0"><label class="font-weight-bold mb-2 d-block">Hasil Copy Snippet</label><textarea id="' + options.prefix + '_snippet_code" class="form-control font-size-sm" rows="3" readonly style="height:94px;resize:none;"></textarea></div>' +
-                    '<div class="col-lg-3 d-flex flex-column"><label class="font-weight-bold mb-2 d-block">Aksi</label><div class="d-flex w-100"><button type="button" id="' + options.prefix + '_copy_snippet_btn" class="btn btn-primary flex-fill mr-2" disabled>Copy</button><button type="button" id="' + options.prefix + '_clear_selected_btn" class="btn btn-light-danger flex-fill" disabled>Reset</button></div><div class="mt-3 text-center" style="min-height:22px;"><span id="' + options.prefix + '_copy_status" class="text-muted small"></span></div><div class="mt-2 d-flex justify-content-center" style="min-height:32px;"><span id="' + options.prefix + '_icon_badge" class="label label-inline label-light-primary font-weight-bold" style="visibility:hidden;"></span></div></div>' +
+                    '<div class="col-lg-3 mb-4 mb-lg-0"><label class="font-weight-bold mb-2 d-block">Preview</label><div class="d-flex align-items-center justify-content-center rounded" style="min-height:94px;background:#fff;border:1px dashed #d9dee7;"><i id="' +
+                    options.prefix + '_preview_icon"></i></div></div>' +
+                    '<div class="col-lg-6 mb-4 mb-lg-0"><label class="font-weight-bold mb-2 d-block">Hasil Copy Snippet</label><textarea id="' +
+                    options.prefix +
+                    '_snippet_code" class="form-control font-size-sm" rows="3" readonly style="height:94px;resize:none;"></textarea></div>' +
+                    '<div class="col-lg-3 d-flex flex-column"><label class="font-weight-bold mb-2 d-block">Aksi</label><div class="d-flex w-100"><button type="button" id="' +
+                    options.prefix +
+                    '_copy_snippet_btn" class="btn btn-primary flex-fill mr-2" disabled>Copy</button><button type="button" id="' +
+                    options.prefix +
+                    '_clear_selected_btn" class="btn btn-light-danger flex-fill" disabled>Reset</button></div><div class="mt-3 text-center" style="min-height:22px;"><span id="' +
+                    options.prefix +
+                    '_copy_status" class="text-muted small"></span></div><div class="mt-2 d-flex justify-content-center" style="min-height:32px;"><span id="' +
+                    options.prefix +
+                    '_icon_badge" class="label label-inline label-light-primary font-weight-bold" style="visibility:hidden;"></span></div></div>' +
                     '</div>';
 
                 var countText = document.getElementById(options.prefix + '_count_text');
@@ -953,7 +972,8 @@
                 var clearSelectedBtn = document.getElementById(options.prefix + '_clear_selected_btn');
                 var copyStatus = document.getElementById(options.prefix + '_copy_status');
 
-                var iconCards = Array.prototype.slice.call(listContainer.querySelectorAll('.col-md-2.d-flex.align-items-stretch'));
+                var iconCards = Array.prototype.slice.call(listContainer.querySelectorAll(
+                    '.col-md-2.d-flex.align-items-stretch'));
                 var compactRow = document.createElement('div');
                 compactRow.className = 'row';
                 for (var c = 0; c < iconCards.length; c++) {
@@ -995,10 +1015,12 @@
                     var iconName = nameEl ? nameEl.textContent.trim() : '';
                     var iconEl = iconCards[idx].querySelector('i');
                     var iconRenderClass = iconEl ? iconEl.className : '';
-                    iconRenderClass = iconRenderClass.replace(/\bicon-\S+\b/g, '').replace(/\btext-\S+\b/g, '').replace(/\bla\b/g, '').replace(/\s+/g, ' ').trim();
+                    iconRenderClass = iconRenderClass.replace(/\bicon-\S+\b/g, '').replace(/\btext-\S+\b/g, '').replace(
+                        /\bla\b/g, '').replace(/\s+/g, ' ').trim();
                     iconCards[idx].setAttribute('data-icon-name', iconName.toLowerCase());
                     iconCards[idx].setAttribute('data-icon-label', iconName);
-                    iconCards[idx].setAttribute('data-icon-class', iconRenderClass || (options.defaultPrefixClass + ' ' + iconName).trim());
+                    iconCards[idx].setAttribute('data-icon-class', iconRenderClass || (options.defaultPrefixClass +
+                        ' ' + iconName).trim());
                     iconCards[idx].style.cursor = 'pointer';
                 }
 
@@ -1038,7 +1060,8 @@
 
                 function getCurrentSnippet() {
                     if (!selectedIconClass) return '';
-                    return '<i class="' + selectedIconClass + '" style="font-size: ' + currentSize + 'px; color: ' + currentColor + ';"></i>';
+                    return '<i class="' + selectedIconClass + '" style="font-size: ' + currentSize + 'px; color: ' +
+                        currentColor + ';"></i>';
                 }
 
                 function updateSnippetPanel() {
@@ -1079,7 +1102,8 @@
                         var badge = document.createElement('span');
                         badge.className = options.prefix + '-copied-badge';
                         badge.textContent = 'Copied';
-                        badge.style.cssText = 'position:absolute;top:6px;right:6px;background:#1BC5BD;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;line-height:1.4;';
+                        badge.style.cssText =
+                            'position:absolute;top:6px;right:6px;background:#1BC5BD;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;line-height:1.4;';
                         card.appendChild(badge);
                         break;
                     }
@@ -1090,7 +1114,8 @@
                     if (!toast) {
                         toast = document.createElement('div');
                         toast.id = options.prefix + '_copy_toast';
-                        toast.style.cssText = 'position:fixed;top:20px;right:20px;z-index:2000;background:#1BC5BD;color:#fff;padding:10px 14px;border-radius:6px;font-weight:600;font-size:12px;box-shadow:0 4px 12px rgba(0,0,0,.2);opacity:0;transform:translateY(-8px);transition:all .2s ease;';
+                        toast.style.cssText =
+                            'position:fixed;top:20px;right:20px;z-index:2000;background:#1BC5BD;color:#fff;padding:10px 14px;border-radius:6px;font-weight:600;font-size:12px;box-shadow:0 4px 12px rgba(0,0,0,.2);opacity:0;transform:translateY(-8px);transition:all .2s ease;';
                         document.body.appendChild(toast);
                     }
                     toast.textContent = message;
@@ -1161,7 +1186,10 @@
                         applyIconAppearance();
                         showCopiedBadgeOnSelectedCard();
                         var top = cardHeader.getBoundingClientRect().top + window.pageYOffset - 120;
-                        window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+                        window.scrollTo({
+                            top: Math.max(top, 0),
+                            behavior: 'smooth'
+                        });
                     });
                 }
 
@@ -1216,6 +1244,3 @@
         })();
     </script>
 @endsection
-
-
-

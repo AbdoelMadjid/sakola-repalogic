@@ -4,9 +4,9 @@
 @endsection
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('other')
             <div class="d-flex align-items-center" id="kt_subheader_search">
                 <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">Nexa - Next generation SAAS</span>
@@ -1297,6 +1297,3 @@
     </div>
     <!--end::Container-->
 @endsection
-
-
-

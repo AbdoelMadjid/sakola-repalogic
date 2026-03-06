@@ -4,9 +4,9 @@
 @endsection
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('other')
             <span class="text-muted font-weight-bold mr-4">#XRS-45670</span>
             <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm">Add New</a>
@@ -120,6 +120,3 @@
     <script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
     <script src="{{ asset('assets/js/pages/widgets.js') }}"></script>
 @endsection
-
-
-

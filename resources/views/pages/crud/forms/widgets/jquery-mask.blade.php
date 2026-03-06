@@ -1,9 +1,9 @@
 @extends('layouts.index')
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Crud
@@ -390,6 +390,3 @@
 @section('scripts')
     <script src="{{ asset('assets/js/pages/crud/forms/widgets/jquery-mask.js') }}"></script>
 @endsection
-
-
-

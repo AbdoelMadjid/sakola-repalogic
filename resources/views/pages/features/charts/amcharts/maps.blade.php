@@ -4,9 +4,9 @@
 @endsection
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Features
@@ -142,13 +142,10 @@
 @endsection
 @section('scripts')
     <script src="//www.amcharts.com/lib/3/ammap.js"></script>
-		<script src="//www.amcharts.com/lib/3/maps/js/usaLow.js"></script>
-		<script src="//www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-		<script src="//www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
-		<script src="//www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-		<script src="//www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="//www.amcharts.com/lib/3/maps/js/usaLow.js"></script>
+    <script src="//www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+    <script src="//www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
+    <script src="//www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="//www.amcharts.com/lib/3/themes/light.js"></script>
     <script src="assets/js/pages/features/charts/amcharts/maps.js"></script>
 @endsection
-
-
-

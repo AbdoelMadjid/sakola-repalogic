@@ -4,9 +4,9 @@
 @endsection
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Features
@@ -108,6 +108,3 @@
     <script src="{{ asset('assets/plugins/custom/kanban/kanban.bundle.js') }}"></script>
     <script src="{{ asset('assets/js/pages/features/miscellaneous/kanban-board.js') }}"></script>
 @endsection
-
-
-

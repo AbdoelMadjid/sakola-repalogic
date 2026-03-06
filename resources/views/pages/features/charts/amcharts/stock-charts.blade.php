@@ -4,9 +4,9 @@
 @endsection
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
-@slot('title')
-    {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
-@endslot
+        @slot('title')
+            {{ trim($__env->yieldContent('title')) ?: getPageTitle() }}
+        @endslot
         @slot('breadcrumb')
             @slot('li_1')
                 Features
@@ -137,6 +137,3 @@
     <script src="//www.amcharts.com/lib/3/themes/light.js"></script>
     <script src="{{ asset('assets/js/pages/features/charts/amcharts/stock-charts.js') }}"></script>
 @endsection
-
-
-
