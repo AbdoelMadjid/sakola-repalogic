@@ -36,7 +36,7 @@
 <br />
 <div align="center">
 <p align="center">
-    <a href="https://preview.keenthemes.com/metronic/demo1/index.html" target="_blank"><img src="https://keenthemes.com/static/metronic/tailwind/docs/dist/assets/media/app/default-logo.svg" width="400" alt="Metronic Logo">
+    <a href="https://preview.keenthemes.com/metronic/demo1/index.html" target="_blank"><img src="https://github.com/AbdoelMadjid/sakola-repalogic/blob/main/public/assets/media/logos/default.svg" width="400" alt="Metronic Logo">
     </a>
 </p>
 </div>
@@ -49,9 +49,9 @@ Configure the Metronic 2020 ext .HTML admin template to Laravel 12. By carrying 
 
 ## Flat Form
 
--   <a href="https://www.php.net/releases/8_2_3.php" target="_blank">PHP v8.2.3</a>
--   <a href="https://laravel.com/docs/12.x" target="_blank">Laravel v12.0</a>
--   <a href="https://preview.keenthemes.com/metronic/demo1/index.html" target="_blank">Metronic v 7.2.9</a>
+- <a href="https://www.php.net/releases/8_2_3.php" target="_blank">PHP v8.2.3</a>
+- <a href="https://laravel.com/docs/12.x" target="_blank">Laravel v12.0</a>
+- <a href="https://preview.keenthemes.com/metronic/demo1/index.html" target="_blank">Metronic v 7.2.9</a>
 
 ## Installation
 
