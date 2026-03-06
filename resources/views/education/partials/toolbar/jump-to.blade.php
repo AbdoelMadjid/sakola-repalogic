@@ -39,7 +39,7 @@
         @if (Route::has('login'))
             <li class="dropdown-item g-px-0 g-py-2">
                 @auth
-                    <a href="{{ route('homepage') }}"
+                    <a href="{{ route('dashboard') }}"
                         class="nav-link g-color-white g-bg-primary g-bg-primary-light-v1--hover g-font-size-default">
                         {{ __('education.dashboard') }}
                     </a>
@@ -53,4 +53,3 @@
         @endif
     </ul>
 </li>
-

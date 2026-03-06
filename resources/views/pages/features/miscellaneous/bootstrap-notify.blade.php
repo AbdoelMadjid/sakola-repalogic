@@ -409,9 +409,162 @@
             <!--end::Form-->
         </div>
         <!--end::Card-->
+
+        <!--begin::Card-->
+        <div class="card card-custom mt-8">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3 class="card-label">Script Implementasi (Copy-Paste)</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-4">Gunakan contoh berikut untuk implementasi cepat Bootstrap Notify:</p>
+                <textarea class="form-control font-monospace" id="kt_notify_script_snippet" rows="22"
+                    readonly>$.notify({
+    title: 'Notification Title',
+    message: 'New order has been placed',
+    icon: 'icon flaticon2-bell-alarm-symbol',
+    url: 'https://www.keenthemes.com',
+    target: '_blank'
+}, {
+    type: 'success',
+    allow_dismiss: true,
+    newest_on_top: false,
+    mouse_over: false,
+    showProgressbar: false,
+    spacing: 10,
+    timer: 2000,
+    placement: {
+        from: 'top',
+        align: 'right'
+    },
+    offset: {
+        x: 30,
+        y: 30
+    },
+    delay: 1000,
+    z_index: 10000,
+    animate: {
+        enter: 'animate__animated animate__fadeInDown',
+        exit: 'animate__animated animate__fadeOutUp'
+    }
+});</textarea>
+                <div class="mt-4">
+                    <button type="button" id="kt_notify_copy_script" class="btn btn-light-primary">Copy Script</button>
+                </div>
+            </div>
+        </div>
+        <!--end::Card-->
     </div>
     <!--end::Container-->
 @endsection
 @section('scripts')
     <script src="{{ asset('assets/js/pages/features/miscellaneous/bootstrap-notify.js') }}"></script>
+    <script>
+        jQuery(document).ready(function() {
+            function escapeJsString(value) {
+                return String(value).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+            }
+
+            function buildNotifySnippet() {
+                var contentLines = [];
+                var optionLines = [];
+                var iconValue = $('#kt_notify_icon').val();
+
+                contentLines.push("    message: 'New order has been placed'");
+
+                if ($('#kt_notify_title').prop('checked')) {
+                    contentLines.unshift("    title: 'Notification Title'");
+                }
+
+                if (iconValue) {
+                    contentLines.push("    icon: 'icon " + escapeJsString(iconValue) + "'");
+                }
+
+                if ($('#kt_notify_url').prop('checked')) {
+                    contentLines.push("    url: 'www.keenthemes.com'");
+                    contentLines.push("    target: '_blank'");
+                }
+
+                optionLines.push("    type: '" + escapeJsString($('#kt_notify_state').val()) + "'");
+                optionLines.push("    allow_dismiss: " + $('#kt_notify_dismiss').prop('checked'));
+                optionLines.push("    newest_on_top: " + $('#kt_notify_top').prop('checked'));
+                optionLines.push("    mouse_over: " + $('#kt_notify_pause').prop('checked'));
+                optionLines.push("    showProgressbar: " + $('#kt_notify_progress').prop('checked'));
+                optionLines.push("    spacing: " + ($('#kt_notify_spacing').val() || 0));
+                optionLines.push("    timer: " + ($('#kt_notify_timer').val() || 0));
+                optionLines.push("    placement: {");
+                optionLines.push("        from: '" + escapeJsString($('#kt_notify_placement_from').val()) + "'");
+                optionLines.push("        align: '" + escapeJsString($('#kt_notify_placement_align').val()) + "'");
+                optionLines.push("    }");
+                optionLines.push("    offset: {");
+                optionLines.push("        x: " + ($('#kt_notify_offset_x').val() || 0));
+                optionLines.push("        y: " + ($('#kt_notify_offset_y').val() || 0));
+                optionLines.push("    }");
+                optionLines.push("    delay: " + ($('#kt_notify_delay').val() || 0));
+                optionLines.push("    z_index: " + ($('#kt_notify_zindex').val() || 0));
+                optionLines.push("    animate: {");
+                optionLines.push("        enter: 'animate__animated animate__" + escapeJsString($('#kt_notify_animate_enter').val()) +
+                    "'");
+                optionLines.push("        exit: 'animate__animated animate__" + escapeJsString($('#kt_notify_animate_exit').val()) +
+                    "'");
+                optionLines.push("    }");
+
+                var script = "$.notify({\n" + contentLines.join(",\n") + "\n}, {\n" + optionLines.join(",\n") + "\n});";
+                $('#kt_notify_script_snippet').val(script);
+            }
+
+            var controlSelectors = [
+                '#kt_notify_placement_from',
+                '#kt_notify_placement_align',
+                '#kt_notify_animate_enter',
+                '#kt_notify_animate_exit',
+                '#kt_notify_icon',
+                '#kt_notify_url',
+                '#kt_notify_dismiss',
+                '#kt_notify_pause',
+                '#kt_notify_top',
+                '#kt_notify_title',
+                '#kt_notify_progress',
+                '#kt_notify_spacing',
+                '#kt_notify_offset_x',
+                '#kt_notify_offset_y',
+                '#kt_notify_delay',
+                '#kt_notify_timer',
+                '#kt_notify_zindex',
+                '#kt_notify_state'
+            ];
+
+            $(controlSelectors.join(',')).on('change input', buildNotifySnippet);
+            $('[data-switch=true]').on('switchChange.bootstrapSwitch', buildNotifySnippet);
+            $('form').on('reset', function() {
+                setTimeout(buildNotifySnippet, 0);
+            });
+
+            buildNotifySnippet();
+
+            $('#kt_notify_copy_script').on('click', function() {
+                var textarea = document.getElementById('kt_notify_script_snippet');
+                textarea.focus();
+                textarea.select();
+                textarea.setSelectionRange(0, 99999);
+
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(textarea.value);
+                } else {
+                    document.execCommand('copy');
+                }
+
+                $.notify({
+                    message: 'Script berhasil di-copy.'
+                }, {
+                    type: 'success',
+                    placement: {
+                        from: 'top',
+                        align: 'right'
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

@@ -163,7 +163,7 @@
                                 @if (Route::has('login'))
                                     <li class="py-2">
                                         @auth
-                                            <a href="{{ route('homepage') }}"
+                                            <a href="{{ route('dashboard') }}"
                                                 class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5">
                                                 {{ __('education.dashboard') }}
                                                 <i

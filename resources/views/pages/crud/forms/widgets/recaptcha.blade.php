@@ -18,6 +18,9 @@
     @endcomponent
 @endsection
 @section('content')
+    @php
+        $recaptchaSiteKey = env('RECAPTCHA_SITE_KEY', '');
+    @endphp
     <!--begin::Container-->
     <div class="container">
         <!--begin::Notice-->
@@ -86,7 +89,7 @@
           &lt;div class="form-group row"&gt;
            &lt;label class="col-form-label text-right col-lg-3 col-sm-12"&gt;Google reCaptcha&lt;/label&gt;
            &lt;div class="col-lg-4 col-md-9 col-sm-12"&gt;
-            &lt;div class="g-recaptcha" data-sitekey="6LdnLwgUAAAAAAIb9L3PQlHQgvSCi16sYgbMIMFR"&gt;&lt;/div&gt;
+            &lt;div class="g-recaptcha" data-sitekey="&lbrace;&lbrace; env('RECAPTCHA_SITE_KEY') &rbrace;&rbrace;"&gt;&lt;/div&gt;
             &lt;div class="form-text text-muted"&gt;
              To learn more about Google reCaptcha please visit &lt;a class="link" href="http://www.google.com/recaptcha" target="_blank"&gt;
              http://www.google.com/recaptcha &lt;/a&gt;
@@ -116,7 +119,7 @@
                     <div class="form-group row">
                         <label class="col-form-label text-right col-lg-3 col-sm-12">Google reCaptcha</label>
                         <div class="col-lg-4 col-md-9 col-sm-12">
-                            <div class="g-recaptcha" data-sitekey="6LdnLwgUAAAAAAIb9L3PQlHQgvSCi16sYgbMIMFR"></div>
+                            <div class="g-recaptcha" data-sitekey="{{ $recaptchaSiteKey }}"></div>
                             <div class="form-text text-muted">To learn more about Google reCaptcha please visit
                                 <a class="link" href="http://www.google.com/recaptcha"
                                     target="_blank">http://www.google.com/recaptcha</a>
