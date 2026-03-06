@@ -56,7 +56,7 @@ Configure the Metronic 2020 ext .HTML admin template to Laravel 12. By carrying 
 ## Installation
 
 ```console
-git clone https://github.com/AbdoelMadjid/metronic-729-laravel-12.git
+git clone https://github.com/AbdoelMadjid/sakola-repalogic.git
 ```
 
 ```console
@@ -79,9 +79,13 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-```html
-DB_CONNECTION=mysql DB_HOST=127.0.0.1 DB_PORT=3306 DB_DATABASE=??
-DB_USERNAME=root DB_PASSWORD=
+```console
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=??
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 
 ```console
