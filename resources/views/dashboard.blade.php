@@ -12,6 +12,12 @@
 @endsection
 @section('content')
     <!--begin::Container-->
+    @php
+        $currentUser = auth()->user();
+        $displayName = $currentUser?->name ?? 'User';
+        $displayEmail = $currentUser?->email ?? '-';
+        $profilePhoto = $currentUser?->avatar_url ?? asset('assets/media/users/default.jpg');
+    @endphp
     {{-- @include('layouts.partials._content') --}}
     <div class="container-fluid">
         <!--begin::Card-->
@@ -22,7 +28,7 @@
                     <!--begin: Pic-->
                     <div class="flex-shrink-0 mr-7 mt-lg-0 mt-3">
                         <div class="symbol symbol-50 symbol-lg-120">
-                            <img src="assets/media/users/300_1.jpg" alt="image" />
+                            <img src="{{ $profilePhoto }}" alt="image" />
                         </div>
                         <div class="symbol symbol-50 symbol-lg-120 symbol-primary d-none">
                             <span class="font-size-h3 symbol-label font-weight-boldest">JM</span>
@@ -35,8 +41,7 @@
                         <div class="d-flex justify-content-between flex-wrap mt-1">
                             <div class="d-flex mr-3">
                                 <a href="#"
-                                    class="text-dark-75 text-hover-primary font-size-h5 font-weight-bold mr-3">Jason
-                                    Muller</a>
+                                    class="text-dark-75 text-hover-primary font-size-h5 font-weight-bold mr-3">{{ $displayName }}</a>
                                 <a href="#">
                                     <i class="flaticon2-correct text-success font-size-h5"></i>
                                 </a>
@@ -54,7 +59,7 @@
                                 <div class="d-flex flex-wrap mb-4">
                                     <a href="#"
                                         class="text-dark-50 text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
-                                        <i class="flaticon2-new-email mr-2 font-size-lg"></i>jason@siastudio.com</a>
+                                        <i class="flaticon2-new-email mr-2 font-size-lg"></i>{{ $displayEmail }}</a>
                                     <a href="#"
                                         class="text-dark-50 text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
                                         <i class="flaticon2-calendar-3 mr-2 font-size-lg"></i>PR Manager</a>
