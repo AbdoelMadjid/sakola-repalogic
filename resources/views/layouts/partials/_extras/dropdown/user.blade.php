@@ -116,6 +116,9 @@
     <!--begin::Footer-->
     <div class="navi-separator mt-3"></div>
     <div class="navi-footer  px-8 py-5">
+        <a href="/custom/pages/pricing/pricing-2"
+            class="btn btn-clean font-weight-bold">{{ __('user_dropdown.upgrade_plan') }}</a>
+
         <form method="POST" action="{{ route('logout') }}">
             @csrf
 
@@ -123,8 +126,7 @@
                 onclick="event.preventDefault(); this.closest('form').submit();">{{ __('user_dropdown.sign_out') }}</a>
         </form>
 
-        <a href="/custom/pages/pricing/pricing-2"
-            class="btn btn-clean font-weight-bold">{{ __('user_dropdown.upgrade_plan') }}</a>
+
     </div>
 
     <!--end::Footer-->
