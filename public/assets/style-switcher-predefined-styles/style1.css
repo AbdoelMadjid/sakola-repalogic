@@ -1,0 +1,40 @@
+/* Predefined style 1 */
+.g-color-primary,
+.g-color-primary--hover:hover,
+.u-icon-v1:hover,
+.u-icon-v2:hover {
+  color: #2f80ed !important;
+}
+
+.g-bg-primary,
+.g-bg-primary--hover:hover,
+.u-btn-primary,
+.u-btn-primary:hover,
+.u-btn-primary.active {
+  background-color: #2f80ed !important;
+  border-color: #2f80ed !important;
+}
+
+.g-brd-primary,
+.g-brd-primary--hover:hover {
+  border-color: #2f80ed !important;
+}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Playfair Display", Helvetica, Arial, serif !important;
+}

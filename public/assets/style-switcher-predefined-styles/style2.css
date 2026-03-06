@@ -1,0 +1,40 @@
+/* Predefined style 2 */
+.g-color-primary,
+.g-color-primary--hover:hover,
+.u-icon-v1:hover,
+.u-icon-v2:hover {
+  color: #e74c3c !important;
+}
+
+.g-bg-primary,
+.g-bg-primary--hover:hover,
+.u-btn-primary,
+.u-btn-primary:hover,
+.u-btn-primary.active {
+  background-color: #e74c3c !important;
+  border-color: #e74c3c !important;
+}
+
+.g-brd-primary,
+.g-brd-primary--hover:hover {
+  border-color: #e74c3c !important;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Raleway", Helvetica, Arial, sans-serif !important;
+}
