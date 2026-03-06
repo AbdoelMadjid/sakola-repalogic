@@ -6,7 +6,7 @@
 @section('subheader')
     @component('layouts.partials._subheader.subheader-v1')
         @slot('title')
-            Dashboard
+            {{ __('aside.dashboard') }}
         @endslot
     @endcomponent
 @endsection
