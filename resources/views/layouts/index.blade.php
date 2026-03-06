@@ -178,7 +178,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
     <script src="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
     <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/js/engage_code.js') }}"></script>
+
+    <!-- Tampilkan pengumuman -->
+    {{-- <script src="{{ asset('assets/js/engage_code.js') }}"></script> --}}
 
     <!--end::Global Theme Bundle-->
 

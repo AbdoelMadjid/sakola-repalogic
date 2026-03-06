@@ -63,22 +63,44 @@ if (!function_exists('getRoleName')) {
 }
 
 if (!function_exists('renderGreeting')) {
-    function renderGreeting()
+    function renderGreeting($locale = null)
     {
         // Set the time zone to your local time zone (e.g., "Asia/Jakarta")
         $date = Carbon::now('Asia/Jakarta');
 
-        // Determine the greeting based on the current time
+        $activeLocale = strtolower((string) ($locale ?? app()->getLocale() ?? 'id'));
+        if (!in_array($activeLocale, ['id', 'en'], true)) {
+            $activeLocale = 'id';
+        }
+
+        // Determine the greeting key based on the current time
         $hour = $date->hour;
         if ($hour >= 0 && $hour < 12) {
-            $greeting = "Selamat Pagi";
+            $period = 'morning';
         } elseif ($hour >= 12 && $hour < 15) {
-            $greeting = "Selamat Siang";
+            $period = 'afternoon';
         } elseif ($hour >= 15 && $hour < 18) {
-            $greeting = "Selamat Sore";
+            $period = 'evening';
         } else {
-            $greeting = "Selamat Malam";
+            $period = 'night';
         }
+
+        $greetings = [
+            'id' => [
+                'morning' => 'Selamat Pagi',
+                'afternoon' => 'Selamat Siang',
+                'evening' => 'Selamat Sore',
+                'night' => 'Selamat Malam',
+            ],
+            'en' => [
+                'morning' => 'Good Morning',
+                'afternoon' => 'Good Afternoon',
+                'evening' => 'Good Evening',
+                'night' => 'Good Evening',
+            ],
+        ];
+
+        $greeting = $greetings[$activeLocale][$period];
 
         // Return the greeting HTML
         return "<span id='greeting-display'>$greeting</span>";

@@ -41,7 +41,8 @@
                         <div class="d-flex justify-content-between flex-wrap mt-1">
                             <div class="d-flex mr-3">
                                 <a href="#"
-                                    class="text-dark-75 text-hover-primary font-size-h5 font-weight-bold mr-3">{{ $displayName }}</a>
+                                    class="text-dark-75 text-hover-primary font-size-h5 font-weight-bold mr-3">{!! renderGreeting() !!},
+                                    {{ $displayName }}</a>
                                 <a href="#">
                                     <i class="flaticon2-correct text-success font-size-h5"></i>
                                 </a>
@@ -64,7 +65,7 @@
                                         class="text-dark-50 text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
                                         <i class="flaticon2-calendar-3 mr-2 font-size-lg"></i>PR Manager</a>
                                     <a href="#" class="text-dark-50 text-hover-primary font-weight-bold">
-                                        <i class="flaticon2-placeholder mr-2 font-size-lg"></i>Melbourne</a>
+                                        <i class="flaticon2-placeholder mr-2 font-size-lg"></i>{!! renderTime('header-menu-time') !!}</a>
                                 </div>
                                 <span class="font-weight-bold text-dark-50">I distinguish three main text objectives could
                                     be merely to inform people.</span>

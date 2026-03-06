@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function () use ($configs) {
                             if (view()->exists($view)) {
                                 Route::view($uri, $view)->name($name);
                             } else {
-                                Route::view($uri, 'coming-soon')->name($name);
+                                Route::view($uri, 'custom/apps/user/list-datatable')->name($name);
                             }
                         }
                     }
