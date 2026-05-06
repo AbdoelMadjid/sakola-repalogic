@@ -75,6 +75,11 @@ class User extends Authenticatable
             return asset($avatar);
         }
 
+        // If avatar is just a filename (no path separators), assume it's in assets/media/users/
+        if (!Str::contains($avatar, ['/'])) {
+            return asset('assets/media/users/' . $avatar);
+        }
+
         return asset('storage/' . ltrim($avatar, '/'));
     }
 }
